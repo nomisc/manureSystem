@@ -175,8 +175,10 @@ end
 
 ---@return void
 function ManureSystemPlaceableMixers:onDelete()
-    for _, mixer in ipairs(self.spec_manureSystemPlaceableMixers.mixers) do
-        self:unloadMixer(mixer)
+    if self.spec_manureSystemPlaceableMixers ~= nil and self.spec_manureSystemPlaceableMixers.mixers ~= nil then
+        for _, mixer in ipairs(self.spec_manureSystemPlaceableMixers.mixers) do
+            self:unloadMixer(mixer)
+        end
     end
 end
 
